@@ -19,12 +19,13 @@ body, html {
   flex-direction: column;
 }
 .tags {
+  margin-top: 12px;
 }
 .tags li {
   display: inline-block;
   color: #333;
   font-size: .9em; 
-  padding: 0 4px;
+  padding-right: 4px;
   text-decoration: underline;
 }
 .flex-col :nth-child(1) {
@@ -158,4 +159,10 @@ ul {
       "infos xp3 xp3 xp3 technos"
       "infos xp4 xp5 xp6 technos";
     }
+}
+
+@media screen and (max-width: 1250px){
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
 }
