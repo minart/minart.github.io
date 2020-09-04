@@ -1,0 +1,135 @@
+/**
+  font-family: 'EB Garamond', serif;
+  font-family: 'Oswald', sans-serif;
+**/
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;800&family=Oswald&display=swap');
+
+body, html { 
+  padding: 0; 
+  margin: 0;
+  font-family: 'EB Garamond', serif;
+  line-height: 1.4em;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.tags {
+}
+.tags li {
+  display: inline-block;
+  color: #333;
+  font-size: .9em; 
+  padding: 0 4px;
+  text-decoration: underline;
+}
+.flex-col :nth-child(1) {
+  font-size: 0.8em;
+  font-weight: 400;
+}
+.flex-col :nth-child(2) {
+  font-size: 0.8em;
+}
+.flex-col :nth-child(3) {
+  font-size: 0.6em;
+}
+.xp-container :nth-child(2){
+  padding: 0;
+  margin: 0;
+}
+.xp-container .flex :nth-child(1) {
+  font-size: 0.8em;
+  padding-right: 12px;
+  margin-right: 12px;
+  border-right: 2px solid #ebebeb;
+  font-weight: 400;
+}
+.xp-container .flex :nth-child(2) {
+  font-size: 0.8em;
+}
+.xp-container .flex :nth-child(3) {
+  font-size: 0.6em;
+}
+h1 {
+  line-height: 50px;
+}
+h1, h2, h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
+.grid-layout {
+  display: grid;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  grid-gap:  40px;
+  grid-template-columns: 3fr repeat(3, 1fr) 1fr;
+  grid-template-areas:
+    "infos xp1 xp1 xp1 technos"
+    "infos xp2 xp2 xp2 technos"
+    "infos xp3 xp3 xp3 technos"
+    "infos xp4 xp5 xp6 technos";
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.technos {
+  padding: 20px;
+  border: 1px solid #ebebeb;
+}
+.technos ul li {
+  border-bottom: 1px dotted #ccc;
+  line-height: 26px;
+}
+.infos { 
+  display: flex;
+  border: 1px solid #ebebeb;
+  padding: 0 15%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-area: infos;
+  text-align: center;
+}
+.xp1 { grid-area: xp1; }
+.xp2 { grid-area: xp2; }
+.xp3 { grid-area: xp3; }
+.xp4 { grid-area: xp4; }
+.xp5 { grid-area: xp5; }
+.xp6 { grid-area: xp6; }
+.technos { grid-area: technos; }
+
+
+
+@media print {
+  body {
+    font-size: 12px;
+  }
+  h1 { line-height: 18px; }
+  .grid-layout {
+    display: grid;
+    padding: 20px;
+    box-sizing: border-box;
+    grid-gap:  20px;
+    grid-template-columns: 2fr repeat(3, 1fr) 2fr;
+    grid-template-areas:
+      "infos xp1 xp1 xp1 technos"
+      "infos xp2 xp2 xp2 technos"
+      "infos xp3 xp3 xp3 technos"
+      "infos xp4 xp5 xp6 technos";
+  }
+  .infos {
+    display: flex;
+    border: none;
+    padding: 0 10px;
+    justify-content: start;
+    grid-area: infos;
+    text-align: center;
+}
+}
