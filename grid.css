@@ -68,7 +68,7 @@ h1, h2, h3 {
   width: 100vw;
   height: 100vh;
   grid-gap:  40px;
-  grid-template-columns: 3fr repeat(3, 1fr) 1fr;
+  grid-template-columns: minmax(400px, 480px) repeat(3, 1fr) 225px;
   grid-template-areas:
     "infos xp1 xp1 xp1 technos"
     "infos xp2 xp2 xp2 technos"
@@ -82,7 +82,7 @@ ul {
 }
 .technos {
   padding: 20px;
-  border: 1px solid #ebebeb;
+  border-left: 1px solid #ebebeb;
 }
 .technos ul li {
   border-bottom: 1px dotted #ccc;
@@ -90,7 +90,7 @@ ul {
 }
 .infos { 
   display: flex;
-  border: 1px solid #ebebeb;
+  border-right: 1px solid #ebebeb;
   padding: 0 15%;
   flex-direction: column;
   justify-content: space-evenly;
@@ -118,18 +118,44 @@ ul {
     box-sizing: border-box;
     grid-gap:  20px;
     grid-template-columns: 2fr repeat(3, 1fr) 2fr;
+  }
+    .infos {
+      display: flex;
+      border: none;
+      padding: 0 10px 0 10px;
+      justify-content: start;
+      grid-area: infos;
+      text-align: center;
+  }
+}
+
+@media screen and (max-width: 1650px){
+  body {
+    font-size: .9em;
+  }
+  h1 {
+    line-height: 30px;
+}
+  .infos {
+    justify-content: start;
+    text-align: left;
+    padding: 0 15px;
+  }
+  h2 {
+    margin: 8px 0;
+  }
+  .grid-layout {
+    display: grid;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    grid-gap:  15px;
+    grid-template-columns: 320px repeat(3, 1fr) 225px;
     grid-template-areas:
       "infos xp1 xp1 xp1 technos"
       "infos xp2 xp2 xp2 technos"
       "infos xp3 xp3 xp3 technos"
       "infos xp4 xp5 xp6 technos";
-  }
-  .infos {
-    display: flex;
-    border: none;
-    padding: 0 10px;
-    justify-content: start;
-    grid-area: infos;
-    text-align: center;
-}
+    }
 }
