@@ -3,7 +3,9 @@
   font-family: 'Oswald', sans-serif;
 **/
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;800&family=Oswald&display=swap');
-
+body {
+  overflow: hidden;
+}
 body, html { 
   padding: 0; 
   margin: 0;
@@ -69,7 +71,8 @@ h1, h2, h3 {
   width: 100vw;
   height: 100vh;
   grid-gap:  40px;
-  grid-template-columns: minmax(400px, 480px) repeat(3, 1fr) 225px;
+  grid-template-columns: 500px repeat(3, 1fr) 225px;
+  grid-template-rows: repeat(4, 1fr);
   grid-template-areas:
     "infos xp1 xp1 xp1 technos"
     "infos xp2 xp2 xp2 technos"
@@ -107,7 +110,6 @@ ul {
 .technos { grid-area: technos; }
 
 
-
 @media print {
   body {
     font-size: 12px;
@@ -134,13 +136,30 @@ ul {
   body {
     font-size: .9em;
   }
+  .technos {
+  }
+  .technos > div {
+      margin-top: 16px;
+    }
+    .technos > div:first-child {
+      margin: 0;
+    }
+  .technos ul li {
+    border-bottom: 0px; 
+    line-height: 22px;
+  }
+
   h1 {
     line-height: 30px;
-}
+  }
+  h3 {
+    margin:  0;
+    padding: 0;
+  }
   .infos {
     justify-content: start;
     text-align: left;
-    padding: 0 15px;
+    padding: 0 5%;
   }
   h2 {
     margin: 8px 0;
@@ -156,13 +175,26 @@ ul {
     grid-template-areas:
       "infos xp1 xp1 xp1 technos"
       "infos xp2 xp2 xp2 technos"
-      "infos xp3 xp3 xp3 technos"
+      "infos xp3 xp3 xp3 technos"²
       "infos xp4 xp5 xp6 technos";
     }
 }
 
-@media screen and (max-width: 1250px){
+@media screen and (max-width: 1050px){
+  .technos { 
+    display: flex; 
+    flex: 20% 20% 20% 20% 20%;
+    justify-content: space-between; 
+  }
   .grid-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "infos infos infos"
+      "xp1 xp1 xp1"
+      "xp2 xp2 xp2"
+      "xp3 xp3 xp3"
+      " xp4 xp5 xp6 "
+      "technos technos technos";
+    }
   }
 }
